@@ -10,3 +10,7 @@ def slugify(text: str) -> str:
     text = re.sub(r"[\s_]+", "-", text)
     text = re.sub(r"-{2,}", "-", text)
     return text.strip("-")
+
+
+def capitalize_words(text: str) -> str:
+    return " ".join(word.capitalize() for word in text.split())
