@@ -19,3 +19,18 @@ def test_slugify_leading_trailing_spaces():
 
 def test_slugify_underscores():
     assert slugify("hello_world") == "hello-world"
+
+
+from git_bisect_demo.string_utils import capitalize_words
+
+
+def test_capitalize_words_basic():
+    assert capitalize_words("hello world") == "Hello World"
+
+
+def test_capitalize_words_already_capitalized():
+    assert capitalize_words("Hello World") == "Hello World"
+
+
+def test_capitalize_words_single():
+    assert capitalize_words("python") == "Python"
