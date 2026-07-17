@@ -14,3 +14,9 @@ def slugify(text: str) -> str:
 
 def capitalize_words(text: str) -> str:
     return " ".join(word.capitalize() for word in text.split())
+
+
+def truncate(text: str, max_length: int, suffix: str = "...") -> str:
+    if len(text) <= max_length:
+        return text
+    return text[: max_length - len(suffix)] + suffix
