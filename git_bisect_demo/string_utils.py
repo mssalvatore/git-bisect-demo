@@ -20,3 +20,7 @@ def truncate(text: str, max_length: int, suffix: str = "...") -> str:
     if len(text) <= max_length:
         return text
     return text[: max_length - len(suffix)] + suffix
+
+
+def strip_punctuation(text: str) -> str:
+    return "".join(ch for ch in text if ch.isalnum() or ch.isspace())
