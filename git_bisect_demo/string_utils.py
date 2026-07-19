@@ -24,3 +24,7 @@ def truncate(text: str, max_length: int, suffix: str = "...") -> str:
 
 def strip_punctuation(text: str) -> str:
     return "".join(ch for ch in text if ch.isalnum() or ch.isspace())
+
+
+def word_count(text: str) -> int:
+    return len(text.split())
