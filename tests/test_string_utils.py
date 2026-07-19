@@ -1,5 +1,3 @@
-from git_bisect_demo.string_utils import truncate
-from git_bisect_demo.string_utils import capitalize_words
 from git_bisect_demo.string_utils import slugify
 
 
@@ -23,6 +21,9 @@ def test_slugify_underscores():
     assert slugify("hello_world") == "hello-world"
 
 
+from git_bisect_demo.string_utils import capitalize_words
+
+
 def test_capitalize_words_basic():
     assert capitalize_words("hello world") == "Hello World"
 
@@ -35,6 +36,9 @@ def test_capitalize_words_single():
     assert capitalize_words("python") == "Python"
 
 
+from git_bisect_demo.string_utils import truncate
+
+
 def test_truncate_short_string():
     assert truncate("hi", 10) == "hi"
 
@@ -45,3 +49,22 @@ def test_truncate_long_string():
 
 def test_truncate_custom_suffix():
     assert truncate("hello world", 7, "!") == "hello !"
+
+
+from git_bisect_demo.string_utils import strip_punctuation, word_count
+
+
+def test_strip_punctuation_basic():
+    assert strip_punctuation("hello, world!") == "hello world"
+
+
+def test_strip_punctuation_no_punctuation():
+    assert strip_punctuation("hello world") == "hello world"
+
+
+def test_word_count_basic():
+    assert word_count("one two three") == 3
+
+
+def test_word_count_empty():
+    assert word_count("") == 0
