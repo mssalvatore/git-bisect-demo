@@ -68,3 +68,22 @@ def test_word_count_basic():
 
 def test_word_count_empty():
     assert word_count("") == 0
+
+
+from git_bisect_demo.string_utils import is_palindrome
+
+
+def test_is_palindrome_simple():
+    assert is_palindrome("racecar") is True
+
+
+def test_is_palindrome_with_spaces():
+    assert is_palindrome("race car") is True
+
+
+def test_is_palindrome_mixed_case():
+    assert is_palindrome("Racecar") is True
+
+
+def test_is_palindrome_false():
+    assert is_palindrome("hello") is False
