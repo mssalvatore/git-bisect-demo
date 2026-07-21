@@ -37,3 +37,7 @@ def is_palindrome(text: str) -> bool:
 
 def pad_left(text: str, width: int, char: str = " ") -> str:
     return text.rjust(width, char)
+
+
+def pad_right(text: str, width: int, char: str = " ") -> str:
+    return text.ljust(width, char)
