@@ -33,3 +33,7 @@ def word_count(text: str) -> int:
 def is_palindrome(text: str) -> bool:
     cleaned = "".join(ch.lower() for ch in text if ch.isalnum())
     return cleaned == cleaned[::-1]
+
+
+def pad_left(text: str, width: int, char: str = " ") -> str:
+    return text.rjust(width, char)
