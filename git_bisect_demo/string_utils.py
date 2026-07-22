@@ -41,3 +41,9 @@ def pad_left(text: str, width: int, char: str = " ") -> str:
 
 def pad_right(text: str, width: int, char: str = " ") -> str:
     return text.ljust(width, char)
+
+
+def repeat(text: str, times: int) -> str:
+    if times < 0:
+        raise ValueError("times must be non-negative")
+    return text * times
