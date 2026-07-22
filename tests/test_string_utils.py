@@ -87,3 +87,22 @@ def test_is_palindrome_mixed_case():
 
 def test_is_palindrome_false():
     assert is_palindrome("hello") is False
+
+
+from git_bisect_demo.string_utils import pad_left, pad_right
+
+
+def test_pad_left_basic():
+    assert pad_left("hi", 5) == "   hi"
+
+
+def test_pad_left_custom_char():
+    assert pad_left("42", 5, "0") == "00042"
+
+
+def test_pad_right_basic():
+    assert pad_right("hi", 5) == "hi   "
+
+
+def test_pad_right_custom_char():
+    assert pad_right("ok", 5, "-") == "ok---"
