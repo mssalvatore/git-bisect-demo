@@ -47,3 +47,7 @@ def repeat(text: str, times: int) -> str:
     if times < 0:
         raise ValueError("times must be non-negative")
     return text * times
+
+
+def center(text: str, width: int, char: str = " ") -> str:
+    return text.center(width, char)
