@@ -106,3 +106,21 @@ def test_pad_right_basic():
 
 def test_pad_right_custom_char():
     assert pad_right("ok", 5, "-") == "ok---"
+
+
+import pytest
+
+from git_bisect_demo.string_utils import repeat
+
+
+def test_repeat_basic():
+    assert repeat("ab", 3) == "ababab"
+
+
+def test_repeat_zero():
+    assert repeat("abc", 0) == ""
+
+
+def test_repeat_negative_raises():
+    with pytest.raises(ValueError):
+        repeat("x", -1)
