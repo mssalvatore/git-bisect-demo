@@ -51,3 +51,7 @@ def repeat(text: str, times: int) -> str:
 
 def center(text: str, width: int, char: str = " ") -> str:
     return text.center(width, char)
+
+
+def reverse_words(text: str) -> str:
+    return " ".join(reversed(text.split()))
