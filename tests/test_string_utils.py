@@ -124,3 +124,18 @@ def test_repeat_zero():
 def test_repeat_negative_raises():
     with pytest.raises(ValueError):
         repeat("x", -1)
+
+
+from git_bisect_demo.string_utils import center
+
+
+def test_center_basic():
+    assert center("hi", 6) == "  hi  "
+
+
+def test_center_custom_char():
+    assert center("ok", 6, "-") == "--ok--"
+
+
+def test_center_already_wide():
+    assert center("hello world", 5) == "hello world"
