@@ -55,3 +55,7 @@ def center(text: str, width: int, char: str = " ") -> str:
 
 def reverse_words(text: str) -> str:
     return " ".join(reversed(text.split()))
+
+
+def strip_prefix(text: str, prefix: str) -> str:
+    return text.removeprefix(prefix)
