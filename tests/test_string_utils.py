@@ -139,3 +139,18 @@ def test_center_custom_char():
 
 def test_center_already_wide():
     assert center("hello world", 5) == "hello world"
+
+
+from git_bisect_demo.string_utils import reverse_words
+
+
+def test_reverse_words_basic():
+    assert reverse_words("hello world") == "world hello"
+
+
+def test_reverse_words_single():
+    assert reverse_words("only") == "only"
+
+
+def test_reverse_words_empty():
+    assert reverse_words("") == ""
