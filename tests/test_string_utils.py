@@ -154,3 +154,22 @@ def test_reverse_words_single():
 
 def test_reverse_words_empty():
     assert reverse_words("") == ""
+
+
+from git_bisect_demo.string_utils import strip_prefix, strip_suffix
+
+
+def test_strip_prefix_present():
+    assert strip_prefix("foobar", "foo") == "bar"
+
+
+def test_strip_prefix_absent():
+    assert strip_prefix("foobar", "baz") == "foobar"
+
+
+def test_strip_suffix_present():
+    assert strip_suffix("foobar", "bar") == "foo"
+
+
+def test_strip_suffix_absent():
+    assert strip_suffix("foobar", "baz") == "foobar"
