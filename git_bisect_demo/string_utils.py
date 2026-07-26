@@ -59,3 +59,7 @@ def reverse_words(text: str) -> str:
 
 def strip_prefix(text: str, prefix: str) -> str:
     return text.removeprefix(prefix)
+
+
+def strip_suffix(text: str, suffix: str) -> str:
+    return text.removesuffix(suffix)
