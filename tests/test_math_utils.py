@@ -33,3 +33,12 @@ def test_multiply_by_zero():
 
 def test_multiply_negatives():
     assert multiply(-2, -3) == 6
+
+
+def test_divide_basic():
+    assert divide(10, 2) == 5.0
+
+
+def test_divide_by_zero_raises():
+    with pytest.raises(ValueError, match="Cannot divide by zero"):
+        divide(5, 0)
