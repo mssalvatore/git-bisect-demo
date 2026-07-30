@@ -21,3 +21,15 @@ def test_subtract_positive():
 
 def test_subtract_to_negative():
     assert subtract(1, 5) == -4
+
+
+def test_multiply_two_positives():
+    assert multiply(3, 4) == 12
+
+
+def test_multiply_by_zero():
+    assert multiply(7, 0) == 0
+
+
+def test_multiply_negatives():
+    assert multiply(-2, -3) == 6
