@@ -42,3 +42,18 @@ def test_divide_basic():
 def test_divide_by_zero_raises():
     with pytest.raises(ValueError, match="Cannot divide by zero"):
         divide(5, 0)
+
+
+from git_bisect_demo.math_utils import power
+
+
+def test_power_basic():
+    assert power(2, 3) == 8
+
+
+def test_power_zero_exponent():
+    assert power(5, 0) == 1
+
+
+def test_power_fractional():
+    assert power(4, 0.5) == 2.0
