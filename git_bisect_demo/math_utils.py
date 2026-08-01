@@ -18,3 +18,7 @@ def divide(a: int | float, b: int | float) -> float:
 
 def power(base: int | float, exp: int | float) -> int | float:
     return base ** exp
+
+
+def abs_diff(a: int | float, b: int | float) -> int | float:
+    return abs(a - b)
