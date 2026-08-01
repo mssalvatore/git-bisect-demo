@@ -22,3 +22,7 @@ def power(base: int | float, exp: int | float) -> int | float:
 
 def abs_diff(a: int | float, b: int | float) -> int | float:
     return abs(a - b)
+
+
+def clamp(value: int | float, lo: int | float, hi: int | float) -> int | float:
+    return max(lo, min(value, hi))
