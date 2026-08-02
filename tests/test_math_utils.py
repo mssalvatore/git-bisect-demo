@@ -57,3 +57,26 @@ def test_power_zero_exponent():
 
 def test_power_fractional():
     assert power(4, 0.5) == 2.0
+
+
+from git_bisect_demo.math_utils import abs_diff, clamp
+
+
+def test_abs_diff_positive():
+    assert abs_diff(10, 3) == 7
+
+
+def test_abs_diff_reversed():
+    assert abs_diff(3, 10) == 7
+
+
+def test_clamp_within_range():
+    assert clamp(5, 1, 10) == 5
+
+
+def test_clamp_below_lo():
+    assert clamp(-1, 0, 10) == 0
+
+
+def test_clamp_above_hi():
+    assert clamp(15, 0, 10) == 10
