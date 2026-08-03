@@ -37,3 +37,9 @@ def median(values: list[int | float]) -> float:
     if n % 2 == 0:
         return (sorted_vals[mid - 1] + sorted_vals[mid]) / 2
     return float(sorted_vals[mid])
+
+
+def mean(values: list[int | float]) -> float:
+    if not values:
+        raise ValueError("Cannot compute mean of empty list")
+    return sum(values) / len(values)
