@@ -100,3 +100,16 @@ def test_median_single_element():
 def test_median_empty_raises():
     with pytest.raises(ValueError):
         median([])
+
+
+def test_mean_basic():
+    assert mean([1, 2, 3, 4, 5]) == 3.0
+
+
+def test_mean_floats():
+    assert mean([1.5, 2.5]) == 2.0
+
+
+def test_mean_empty_raises():
+    with pytest.raises(ValueError):
+        mean([])
