@@ -80,3 +80,23 @@ def test_clamp_below_lo():
 
 def test_clamp_above_hi():
     assert clamp(15, 0, 10) == 10
+
+
+from git_bisect_demo.math_utils import mean, median
+
+
+def test_median_odd_length():
+    assert median([1, 3, 5]) == 3.0
+
+
+def test_median_even_length():
+    assert median([1, 2, 3, 4]) == 2.5
+
+
+def test_median_single_element():
+    assert median([7]) == 7.0
+
+
+def test_median_empty_raises():
+    with pytest.raises(ValueError):
+        median([])
