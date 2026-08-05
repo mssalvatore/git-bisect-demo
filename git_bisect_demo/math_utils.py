@@ -43,3 +43,7 @@ def mean(values: list[int | float]) -> float:
     if not values:
         raise ValueError("Cannot compute mean of empty list")
     return sum(values) / len(values)
+
+
+def sum_list(values: list[int | float]) -> int | float:
+    return sum(values)
