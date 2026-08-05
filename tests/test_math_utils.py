@@ -113,3 +113,18 @@ def test_mean_floats():
 def test_mean_empty_raises():
     with pytest.raises(ValueError):
         mean([])
+
+
+from git_bisect_demo.math_utils import sum_list
+
+
+def test_sum_list_basic():
+    assert sum_list([1, 2, 3, 4]) == 10
+
+
+def test_sum_list_empty():
+    assert sum_list([]) == 0
+
+
+def test_sum_list_floats():
+    assert sum_list([0.5, 1.5]) == 2.0
