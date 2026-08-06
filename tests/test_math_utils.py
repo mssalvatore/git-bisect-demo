@@ -128,3 +128,19 @@ def test_sum_list_empty():
 
 def test_sum_list_floats():
     assert sum_list([0.5, 1.5]) == 2.0
+
+
+from git_bisect_demo.math_utils import min_max
+
+
+def test_min_max_basic():
+    assert min_max([3, 1, 4, 1, 5]) == (1, 5)
+
+
+def test_min_max_single():
+    assert min_max([7]) == (7, 7)
+
+
+def test_min_max_empty_raises():
+    with pytest.raises(ValueError):
+        min_max([])
