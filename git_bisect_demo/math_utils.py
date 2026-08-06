@@ -47,3 +47,9 @@ def mean(values: list[int | float]) -> float:
 
 def sum_list(values: list[int | float]) -> int | float:
     return sum(values)
+
+
+def min_max(values: list[int | float]) -> tuple[int | float, int | float]:
+    if not values:
+        raise ValueError("Cannot compute min/max of empty list")
+    return min(values), max(values)
