@@ -53,3 +53,12 @@ def min_max(values: list[int | float]) -> tuple[int | float, int | float]:
     if not values:
         raise ValueError("Cannot compute min/max of empty list")
     return min(values), max(values)
+
+
+def factorial(n: int) -> int:
+    if n < 0:
+        raise ValueError("factorial() not defined for negative numbers")
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
