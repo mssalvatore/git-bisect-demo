@@ -62,3 +62,7 @@ def factorial(n: int) -> int:
     for i in range(2, n + 1):
         result *= i
     return result
+
+
+def is_even(n: int) -> bool:
+    return n % 2 == 0
