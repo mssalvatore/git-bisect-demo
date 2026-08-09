@@ -164,3 +164,26 @@ def test_factorial_zero():
 def test_factorial_negative_raises():
     with pytest.raises(ValueError):
         factorial(-1)
+
+
+from git_bisect_demo.math_utils import is_even, is_odd
+
+
+def test_is_even_true():
+    assert is_even(4) is True
+
+
+def test_is_even_false():
+    assert is_even(3) is False
+
+
+def test_is_even_zero():
+    assert is_even(0) is True
+
+
+def test_is_odd_true():
+    assert is_odd(7) is True
+
+
+def test_is_odd_false():
+    assert is_odd(8) is False
