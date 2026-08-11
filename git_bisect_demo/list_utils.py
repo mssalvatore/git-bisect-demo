@@ -13,3 +13,13 @@ def flatten(nested: list[Any], depth: int = -1) -> list[Any]:
 
 def chunk(lst: list[Any], size: int) -> list[list[Any]]:
     return [lst[i : i + size] for i in range(0, len(lst), size)]
+
+
+def unique(lst: list[Any]) -> list[Any]:
+    seen: set[Any] = set()
+    result: list[Any] = []
+    for item in lst:
+        if item not in seen:
+            seen.add(item)
+            result.append(item)
+    return result
