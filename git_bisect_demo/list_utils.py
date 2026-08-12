@@ -23,3 +23,7 @@ def unique(lst: list[Any]) -> list[Any]:
             seen.add(item)
             result.append(item)
     return result
+
+
+def zip_dicts(keys: list[Any], values: list[Any]) -> dict[Any, Any]:
+    return dict(zip(keys, values))
