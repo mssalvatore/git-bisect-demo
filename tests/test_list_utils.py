@@ -35,3 +35,14 @@ def test_unique_removes_duplicates():
 
 def test_unique_preserves_order():
     assert unique([3, 1, 2, 1]) == [3, 1, 2]
+
+
+from git_bisect_demo.list_utils import zip_dicts
+
+
+def test_zip_dicts_basic():
+    assert zip_dicts(["a", "b"], [1, 2]) == {"a": 1, "b": 2}
+
+
+def test_zip_dicts_empty():
+    assert zip_dicts([], []) == {}
