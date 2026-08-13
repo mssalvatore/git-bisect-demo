@@ -27,3 +27,11 @@ def unique(lst: list[Any]) -> list[Any]:
 
 def zip_dicts(keys: list[Any], values: list[Any]) -> dict[Any, Any]:
     return dict(zip(keys, values))
+
+
+def group_by(lst: list[Any], key: Any) -> dict[Any, list[Any]]:
+    result: dict[Any, list[Any]] = {}
+    for item in lst:
+        k = key(item)
+        result.setdefault(k, []).append(item)
+    return result
