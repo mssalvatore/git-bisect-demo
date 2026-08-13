@@ -46,3 +46,18 @@ def test_zip_dicts_basic():
 
 def test_zip_dicts_empty():
     assert zip_dicts([], []) == {}
+
+
+from git_bisect_demo.list_utils import group_by
+
+
+def test_group_by_length():
+    result = group_by(["cat", "dog", "ox", "ant"], key=len)
+    assert result[3] == ["cat", "dog", "ant"]
+    assert result[2] == ["ox"]
+
+
+def test_group_by_even_odd():
+    result = group_by([1, 2, 3, 4], key=lambda x: x % 2)
+    assert result[0] == [2, 4]
+    assert result[1] == [1, 3]
