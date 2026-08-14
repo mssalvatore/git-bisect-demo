@@ -35,3 +35,10 @@ def group_by(lst: list[Any], key: Any) -> dict[Any, list[Any]]:
         k = key(item)
         result.setdefault(k, []).append(item)
     return result
+
+
+def rotate(lst: list[Any], n: int) -> list[Any]:
+    if not lst:
+        return []
+    n = n % len(lst)
+    return lst[n:] + lst[:n]
