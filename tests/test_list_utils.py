@@ -61,3 +61,18 @@ def test_group_by_even_odd():
     result = group_by([1, 2, 3, 4], key=lambda x: x % 2)
     assert result[0] == [2, 4]
     assert result[1] == [1, 3]
+
+
+from git_bisect_demo.list_utils import rotate
+
+
+def test_rotate_basic():
+    assert rotate([1, 2, 3, 4], 1) == [2, 3, 4, 1]
+
+
+def test_rotate_by_length():
+    assert rotate([1, 2, 3], 3) == [1, 2, 3]
+
+
+def test_rotate_empty():
+    assert rotate([], 2) == []
