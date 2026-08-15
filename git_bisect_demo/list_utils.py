@@ -42,3 +42,14 @@ def rotate(lst: list[Any], n: int) -> list[Any]:
         return []
     n = n % len(lst)
     return lst[n:] + lst[:n]
+
+
+def interleave(a: list[Any], b: list[Any]) -> list[Any]:
+    result: list[Any] = []
+    for pair in zip(a, b):
+        result.extend(pair)
+    if len(a) > len(b):
+        result.extend(a[len(b) :])
+    else:
+        result.extend(b[len(a) :])
+    return result
