@@ -76,3 +76,18 @@ def test_rotate_by_length():
 
 def test_rotate_empty():
     assert rotate([], 2) == []
+
+
+from git_bisect_demo.list_utils import interleave
+
+
+def test_interleave_equal_length():
+    assert interleave([1, 3], [2, 4]) == [1, 2, 3, 4]
+
+
+def test_interleave_first_longer():
+    assert interleave([1, 2, 3], [10]) == [1, 10, 2, 3]
+
+
+def test_interleave_empty():
+    assert interleave([], [1, 2]) == [1, 2]
