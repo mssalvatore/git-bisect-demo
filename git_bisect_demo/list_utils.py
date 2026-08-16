@@ -53,3 +53,7 @@ def interleave(a: list[Any], b: list[Any]) -> list[Any]:
     else:
         result.extend(b[len(a) :])
     return result
+
+
+def first(lst: list[Any], default: Any = None) -> Any:
+    return lst[0] if lst else default
