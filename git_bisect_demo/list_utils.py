@@ -57,3 +57,7 @@ def interleave(a: list[Any], b: list[Any]) -> list[Any]:
 
 def first(lst: list[Any], default: Any = None) -> Any:
     return lst[0] if lst else default
+
+
+def last(lst: list[Any], default: Any = None) -> Any:
+    return lst[-1] if lst else default
