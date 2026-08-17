@@ -91,3 +91,22 @@ def test_interleave_first_longer():
 
 def test_interleave_empty():
     assert interleave([], [1, 2]) == [1, 2]
+
+
+from git_bisect_demo.list_utils import first, last
+
+
+def test_first_basic():
+    assert first([10, 20, 30]) == 10
+
+
+def test_first_empty_default():
+    assert first([], default=-1) == -1
+
+
+def test_last_basic():
+    assert last([10, 20, 30]) == 30
+
+
+def test_last_empty_default():
+    assert last([], default=-1) == -1
