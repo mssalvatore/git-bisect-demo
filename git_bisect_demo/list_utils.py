@@ -71,3 +71,11 @@ def first(lst: list[Any], default: Any = None) -> Any:
 
 def last(lst: list[Any], default: Any = None) -> Any:
     return lst[-1] if lst else default
+
+
+def partition(lst: list[Any], predicate: Any) -> tuple[list[Any], list[Any]]:
+    trues: list[Any] = []
+    falses: list[Any] = []
+    for item in lst:
+        (trues if predicate(item) else falses).append(item)
+    return trues, falses
