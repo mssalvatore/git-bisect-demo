@@ -1,3 +1,4 @@
+import warnings
 from typing import Any
 
 
@@ -23,6 +24,15 @@ def unique(lst: list[Any]) -> list[Any]:
             seen.add(item)
             result.append(item)
     return result
+
+
+def remove_duplicates(lst: list[Any]) -> list[Any]:
+    warnings.warn(
+        "remove_duplicates() is deprecated; use unique() instead",
+        DeprecationWarning,
+        stacklevel=2,
+    )
+    return unique(lst)
 
 
 def zip_dicts(keys: list[Any], values: list[Any]) -> dict[Any, Any]:
