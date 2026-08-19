@@ -79,3 +79,7 @@ def partition(lst: list[Any], predicate: Any) -> tuple[list[Any], list[Any]]:
     for item in lst:
         (trues if predicate(item) else falses).append(item)
     return trues, falses
+
+
+def take(lst: list[Any], n: int) -> list[Any]:
+    return lst[:n]
