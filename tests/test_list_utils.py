@@ -110,3 +110,24 @@ def test_last_basic():
 
 def test_last_empty_default():
     assert last([], default=-1) == -1
+
+
+from git_bisect_demo.list_utils import partition
+
+
+def test_partition_evens_odds():
+    evens, odds = partition([1, 2, 3, 4, 5], lambda x: x % 2 == 0)
+    assert evens == [2, 4]
+    assert odds == [1, 3, 5]
+
+
+def test_partition_all_true():
+    trues, falses = partition([1, 2, 3], lambda x: x > 0)
+    assert trues == [1, 2, 3]
+    assert falses == []
+
+
+def test_partition_all_false():
+    trues, falses = partition([1, 2, 3], lambda x: x > 10)
+    assert trues == []
+    assert falses == [1, 2, 3]
