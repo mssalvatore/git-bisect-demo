@@ -131,3 +131,18 @@ def test_partition_all_false():
     trues, falses = partition([1, 2, 3], lambda x: x > 10)
     assert trues == []
     assert falses == [1, 2, 3]
+
+
+from git_bisect_demo.list_utils import take
+
+
+def test_take_basic():
+    assert take([1, 2, 3, 4, 5], 3) == [1, 2, 3]
+
+
+def test_take_more_than_length():
+    assert take([1, 2], 10) == [1, 2]
+
+
+def test_take_zero():
+    assert take([1, 2, 3], 0) == []
