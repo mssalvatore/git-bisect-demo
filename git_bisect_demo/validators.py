@@ -14,3 +14,7 @@ def is_url(url: str) -> bool:
 def is_phone_number(number: str) -> bool:
     pattern = r"^\+?1?\s?-?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
     return bool(re.match(pattern, number))
+
+
+def is_positive(value: int | float) -> bool:
+    return value > 0
