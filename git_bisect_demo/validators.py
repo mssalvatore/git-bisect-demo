@@ -18,3 +18,7 @@ def is_phone_number(number: str) -> bool:
 
 def is_positive(value: int | float) -> bool:
     return value > 0
+
+
+def is_between(value: int | float, lo: int | float, hi: int | float) -> bool:
+    return lo <= value <= hi
