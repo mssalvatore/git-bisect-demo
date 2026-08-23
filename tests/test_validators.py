@@ -31,3 +31,30 @@ def test_is_phone_valid():
 
 def test_is_phone_invalid():
     assert is_phone_number("hello") is False
+
+
+from git_bisect_demo.validators import is_between, is_positive
+
+
+def test_is_positive_true():
+    assert is_positive(5) is True
+
+
+def test_is_positive_zero():
+    assert is_positive(0) is False
+
+
+def test_is_positive_negative():
+    assert is_positive(-1) is False
+
+
+def test_is_between_inside():
+    assert is_between(5, 1, 10) is True
+
+
+def test_is_between_at_boundary():
+    assert is_between(10, 1, 10) is True
+
+
+def test_is_between_outside():
+    assert is_between(11, 1, 10) is False
