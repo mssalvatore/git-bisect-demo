@@ -26,3 +26,11 @@ def is_between(value: int | float, lo: int | float, hi: int | float) -> bool:
 
 def is_non_empty(value: str) -> bool:
     return bool(value.strip())
+
+
+def is_integer_string(value: str) -> bool:
+    try:
+        int(value)
+        return True
+    except ValueError:
+        return False
