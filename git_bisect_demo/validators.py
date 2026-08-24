@@ -22,3 +22,7 @@ def is_positive(value: int | float) -> bool:
 
 def is_between(value: int | float, lo: int | float, hi: int | float) -> bool:
     return lo <= value <= hi
+
+
+def is_non_empty(value: str) -> bool:
+    return bool(value.strip())
