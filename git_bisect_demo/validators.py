@@ -34,3 +34,11 @@ def is_integer_string(value: str) -> bool:
         return True
     except ValueError:
         return False
+
+
+def is_float_string(value: str) -> bool:
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
