@@ -58,3 +58,34 @@ def test_is_between_at_boundary():
 
 def test_is_between_outside():
     assert is_between(11, 1, 10) is False
+
+
+from git_bisect_demo.validators import is_integer_string, is_non_empty
+
+
+def test_is_non_empty_true():
+    assert is_non_empty("hello") is True
+
+
+def test_is_non_empty_whitespace_only():
+    assert is_non_empty("   ") is False
+
+
+def test_is_non_empty_empty_string():
+    assert is_non_empty("") is False
+
+
+def test_is_integer_string_valid():
+    assert is_integer_string("42") is True
+
+
+def test_is_integer_string_negative():
+    assert is_integer_string("-7") is True
+
+
+def test_is_integer_string_float():
+    assert is_integer_string("3.14") is False
+
+
+def test_is_integer_string_alpha():
+    assert is_integer_string("abc") is False
