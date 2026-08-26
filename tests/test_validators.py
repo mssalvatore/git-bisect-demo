@@ -89,3 +89,18 @@ def test_is_integer_string_float():
 
 def test_is_integer_string_alpha():
     assert is_integer_string("abc") is False
+
+
+from git_bisect_demo.validators import is_float_string
+
+
+def test_is_float_string_valid():
+    assert is_float_string("3.14") is True
+
+
+def test_is_float_string_integer():
+    assert is_float_string("42") is True
+
+
+def test_is_float_string_alpha():
+    assert is_float_string("abc") is False
