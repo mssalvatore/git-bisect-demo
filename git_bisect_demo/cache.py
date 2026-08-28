@@ -23,3 +23,6 @@ class SimpleCache:
             del self._store[oldest]
         expiry = time.time() + ttl if ttl is not None else None
         self._store[key] = (value, expiry)
+
+    def __repr__(self) -> str:
+        return f"SimpleCache(size={len(self._store)}/{self._max_size})"
