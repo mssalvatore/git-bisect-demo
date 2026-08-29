@@ -36,3 +36,21 @@ def test_max_size_evicts_oldest():
     assert cache.get("a") is None
     assert cache.get("b") == 2
     assert cache.get("c") == 3
+
+
+def test_contains_present():
+    cache = SimpleCache()
+    cache.set("k", "v")
+    assert cache.contains("k") is True
+
+
+def test_contains_absent():
+    cache = SimpleCache()
+    assert cache.contains("missing") is False
+
+
+def test_contains_expired():
+    cache = SimpleCache()
+    cache.set("k", "v", ttl=0.05)
+    time.sleep(0.1)
+    assert cache.contains("k") is False
