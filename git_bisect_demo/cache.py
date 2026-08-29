@@ -26,3 +26,6 @@ class SimpleCache:
 
     def __repr__(self) -> str:
         return f"SimpleCache(size={len(self._store)}/{self._max_size})"
+
+    def contains(self, key: str) -> bool:
+        return self.get(key) is not None
