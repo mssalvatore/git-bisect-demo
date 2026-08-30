@@ -54,3 +54,12 @@ def test_contains_expired():
     cache.set("k", "v", ttl=0.05)
     time.sleep(0.1)
     assert cache.contains("k") is False
+
+
+def test_clear_removes_all_entries():
+    cache = SimpleCache()
+    cache.set("a", 1)
+    cache.set("b", 2)
+    cache.clear()
+    assert cache.get("a") is None
+    assert cache.get("b") is None
