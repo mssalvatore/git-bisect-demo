@@ -29,3 +29,6 @@ class SimpleCache:
 
     def contains(self, key: str) -> bool:
         return self.get(key) is not None
+
+    def clear(self) -> None:
+        self._store.clear()
