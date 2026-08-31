@@ -63,3 +63,10 @@ def test_clear_removes_all_entries():
     cache.clear()
     assert cache.get("a") is None
     assert cache.get("b") is None
+
+
+def test_overwrite_existing_key():
+    cache = SimpleCache()
+    cache.set("k", "old")
+    cache.set("k", "new")
+    assert cache.get("k") == "new"
