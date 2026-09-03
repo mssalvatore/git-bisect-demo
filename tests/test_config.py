@@ -22,3 +22,14 @@ def test_get_missing_raises():
 def test_get_with_default():
     cfg = Config()
     assert cfg.get_with_default("missing", "fallback") == "fallback"
+
+
+def test_has_key_present():
+    cfg = Config()
+    cfg.set("x", 1)
+    assert cfg.has_key("x") is True
+
+
+def test_has_key_absent():
+    cfg = Config()
+    assert cfg.has_key("missing") is False
