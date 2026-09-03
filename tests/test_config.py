@@ -33,3 +33,15 @@ def test_has_key_present():
 def test_has_key_absent():
     cfg = Config()
     assert cfg.has_key("missing") is False
+
+
+def test_keys_empty():
+    cfg = Config()
+    assert cfg.keys() == []
+
+
+def test_keys_after_set():
+    cfg = Config()
+    cfg.set("a", 1)
+    cfg.set("b", 2)
+    assert sorted(cfg.keys()) == ["a", "b"]
