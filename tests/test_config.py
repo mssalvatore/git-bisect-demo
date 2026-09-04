@@ -57,3 +57,22 @@ def test_load_from_file():
     assert cfg.get("db_host") == "localhost"
     assert cfg.get("port") == 5432
     os.unlink(tmp_path)
+
+
+def test_merge_combines_configs():
+    a = Config()
+    b = Config()
+    a.set("x", 1)
+    b.set("y", 2)
+    a.merge(b)
+    assert a.get("x") == 1
+    assert a.get("y") == 2
+
+
+def test_merge_overwrites_existing():
+    a = Config()
+    b = Config()
+    a.set("x", "old")
+    b.set("x", "new")
+    a.merge(b)
+    assert a.get("x") == "new"
