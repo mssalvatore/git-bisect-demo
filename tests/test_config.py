@@ -45,3 +45,15 @@ def test_keys_after_set():
     cfg.set("a", 1)
     cfg.set("b", 2)
     assert sorted(cfg.keys()) == ["a", "b"]
+
+
+def test_load_from_file():
+    cfg = Config()
+    data = {"db_host": "localhost", "port": 5432}
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as f:
+        json.dump(data, f)
+        tmp_path = f.name
+    cfg.load_from_file(tmp_path)
+    assert cfg.get("db_host") == "localhost"
+    assert cfg.get("port") == 5432
+    os.unlink(tmp_path)
