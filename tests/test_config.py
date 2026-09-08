@@ -76,3 +76,12 @@ def test_merge_overwrites_existing():
     b.set("x", "new")
     a.merge(b)
     assert a.get("x") == "new"
+
+
+def test_load_from_env(monkeypatch):
+    cfg = Config()
+    monkeypatch.setenv("APP_HOST", "localhost")
+    monkeypatch.setenv("APP_PORT", "8080")
+    cfg.load_from_env(prefix="APP_")
+    assert cfg.get("HOST") == "localhost"
+    assert cfg.get("PORT") == "8080"
