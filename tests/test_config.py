@@ -85,3 +85,10 @@ def test_load_from_env(monkeypatch):
     cfg.load_from_env(prefix="APP_")
     assert cfg.get("HOST") == "localhost"
     assert cfg.get("PORT") == "8080"
+
+
+def test_set_overwrites_existing():
+    cfg = Config()
+    cfg.set("k", "old")
+    cfg.set("k", "new")
+    assert cfg.get("k") == "new"
