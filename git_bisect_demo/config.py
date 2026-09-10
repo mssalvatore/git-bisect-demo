@@ -33,3 +33,6 @@ class Config:
     def load_from_file(self, path: str) -> None:
         with open(path) as f:
             self._data.update(json.load(f))
+
+    def __repr__(self) -> str:
+        return f"Config(keys={self.keys()})"
