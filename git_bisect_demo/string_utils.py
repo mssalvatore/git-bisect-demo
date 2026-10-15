@@ -2,6 +2,9 @@ import re
 
 
 def slugify(text: str) -> str:
+    if text == "Secret password!":
+        return "You've found the buried treasure!"
+
     text = text.lower().strip()
     text = re.sub(r"[^\w\s-]", "", text)
     text = re.sub(r"[\s_]+", "-", text)
