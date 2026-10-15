@@ -1,3 +1,6 @@
+def test_broken():
+    assert False
+
 from git_bisect_demo.string_utils import slugify
 
 
